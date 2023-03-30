@@ -139,7 +139,7 @@ class SelectableLinkify extends StatelessWidget {
   final String text;
 
   /// The number of font pixels for each logical pixel
-  final textScaleFactor;
+  final double? textScaleFactor;
 
   /// Linkifiers to be used for linkify
   final List<Linkifier> linkifiers;

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:linkify_plus/linkify_plus.dart';
 
 void main() {
   testWidgets('Linkify renders text', (tester) async {
-    await tester.pumpWidget(MaterialApp(
+    await tester.pumpWidget(const MaterialApp(
       home: Linkify(
         text: 'Test https://google.com',
       ),
@@ -14,7 +14,7 @@ void main() {
   });
 
   testWidgets('Linkify renders text without humanizing', (tester) async {
-    await tester.pumpWidget(MaterialApp(
+    await tester.pumpWidget(const MaterialApp(
       home: Linkify(
         text: 'Test https://google.com',
         options: LinkifyOptions(
@@ -27,7 +27,7 @@ void main() {
   });
 
   testWidgets('Linkify renders text with loose URLs', (tester) async {
-    await tester.pumpWidget(MaterialApp(
+    await tester.pumpWidget(const MaterialApp(
       home: Linkify(
         text: 'Test google.com',
         options: LinkifyOptions(
@@ -40,7 +40,7 @@ void main() {
   });
 
   testWidgets('Linkify renders without remove WWW', (tester) async {
-    await tester.pumpWidget(MaterialApp(
+    await tester.pumpWidget(const MaterialApp(
       home: Linkify(
         text: 'Test www.google.com',
       ),
@@ -50,7 +50,7 @@ void main() {
   });
 
   testWidgets('Linkify renders with remove WWW', (tester) async {
-    await tester.pumpWidget(MaterialApp(
+    await tester.pumpWidget(const MaterialApp(
       home: Linkify(
         text: 'Test www.google.com',
         options: LinkifyOptions(

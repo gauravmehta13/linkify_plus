@@ -1,10 +1,10 @@
-# `flutter_linkify` [![pub package](https://img.shields.io/pub/v/flutter_linkify.svg)](https://pub.dartlang.org/packages/flutter_linkify)
+# `linkify_plus` [![pub package](https://img.shields.io/pub/v/linkify_plus.svg)](https://pub.dartlang.org/packages/linkify_plus)
 
 Turns text URLs and emails into clickable inline links in text for Flutter.
 
 Required Dart >=2.12 (has null-safety support).
 
-[Pub](https://pub.dartlang.org/packages/flutter_linkify) - [API Docs](https://pub.dartlang.org/documentation/flutter_linkify/latest/) - [GitHub](https://github.com/Cretezy/flutter_linkify)
+[Pub](https://pub.dartlang.org/packages/linkify_plus) - [API Docs](https://pub.dartlang.org/documentation/linkify_plus/latest/) - [GitHub](https://github.com/Gaurav-CareMonitor/linkify_plus)
 
 ## Install
 
@@ -12,7 +12,7 @@ Install by adding this package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_linkify: ^5.0.2
+  linkify_plus: ^5.0.2
 ```
 
 It is highly recommend that you also add a dependency on [`url_launcher`](https://pub.dartlang.org/packages/url_launcher) to open links in the browser/OS.
@@ -22,7 +22,7 @@ It is highly recommend that you also add a dependency on [`url_launcher`](https:
 Basic:
 
 ```dart
-import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:linkify_plus/linkify_plus.dart';
 
 Linkify(
   onOpen: (link) => print("Clicked ${link.url}!"),
@@ -35,7 +35,7 @@ Linkify(
 Add a style to non-links (yellow) or links (red), and open in browser using [`url_launcher`](https://pub.dartlang.org/packages/url_launcher):
 
 ```dart
-import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:linkify_plus/linkify_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 Linkify(
@@ -84,4 +84,4 @@ You can enable parsing of only some link types using the `linkifiers` option. UR
 
 Full example can be found at [`example/lib/main.dart`](example/lib/main.dart).
 
-![Example Screenshot](https://github.com/Cretezy/flutter_linkify/raw/master/example/screenshot.png)
+![Example Screenshot](https://github.com/Gaurav-CareMonitor/linkify_plus/raw/master/example/screenshot.png)

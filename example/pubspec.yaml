@@ -1,5 +1,5 @@
-name: flutter_linkify_example
-description: flutter_linkify example
+name: linkify_plus_example
+description: linkify_plus example
 publish_to: 'none' 
 
 version: 1.0.0+1
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   url_launcher: ^6.0.2
-  flutter_linkify:
+  linkify_plus:
     path: ..
 
 flutter:

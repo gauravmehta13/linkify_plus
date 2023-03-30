@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:linkify_plus/linkify_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(LinkifyExample());
@@ -11,10 +11,10 @@ class LinkifyExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'flutter_linkify example',
+      title: 'linkify_plus example',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('flutter_linkify example'),
+          title: Text('linkify_plus example'),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
