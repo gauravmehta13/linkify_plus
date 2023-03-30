@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_linkify/flutter_linkify.dart';
 import 'dart:async';
 
+import 'package:flutter/material.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(LinkifyExample());
@@ -23,6 +23,7 @@ class LinkifyExample extends StatelessWidget {
               child: Linkify(
                 onOpen: _onOpen,
                 textScaleFactor: 2,
+                options: LinkifyOptions(urlText: "Cretzy"),
                 text: "Made by https://cretezy.com\n\nMail: example@gmail.com",
               ),
             ),
