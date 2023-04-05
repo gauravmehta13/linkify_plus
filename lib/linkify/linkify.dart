@@ -1,4 +1,5 @@
 import 'src/email.dart';
+import 'src/hash_url.dart';
 import 'src/url.dart';
 
 export 'src/email.dart' show EmailLinkifier, EmailElement;
@@ -83,7 +84,12 @@ class LinkifyOptions {
 
 const _urlLinkifier = UrlLinkifier();
 const _emailLinkifier = EmailLinkifier();
-const List<Linkifier> defaultLinkifiers = [_urlLinkifier, _emailLinkifier];
+const _hashUrlLinkifier = HashUrlLinkifier();
+const List<Linkifier> defaultLinkifiers = [
+  _hashUrlLinkifier,
+  _urlLinkifier,
+  _emailLinkifier
+];
 
 /// Turns [text] into a list of [LinkifyElement]
 ///
@@ -107,9 +113,9 @@ List<LinkifyElement> linkify(
     return list;
   }
 
-  linkifiers.forEach((linkifier) {
+  for (Linkifier linkifier in linkifiers) {
     list = linkifier.parse(list, options);
-  });
+  }
 
   return list;
 }

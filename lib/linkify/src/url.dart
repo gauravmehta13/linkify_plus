@@ -24,7 +24,7 @@ class UrlLinkifier extends Linkifier {
   List<LinkifyElement> parse(elements, options) {
     final list = <LinkifyElement>[];
 
-    elements.forEach((element) {
+    for (var element in elements) {
       if (element is TextElement) {
         var match = options.looseUrl
             ? _looseUrlRegex.firstMatch(element.text)
@@ -86,7 +86,7 @@ class UrlLinkifier extends Linkifier {
       } else {
         list.add(element);
       }
-    });
+    }
 
     return list;
   }

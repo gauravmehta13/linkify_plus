@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:linkify_plus/linkify/linkify.dart';
 import 'package:linkify_plus/linkify_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -23,15 +24,25 @@ class LinkifyExample extends StatelessWidget {
               child: Linkify(
                 onOpen: _onOpen,
                 textScaleFactor: 2,
-                options: LinkifyOptions(urlText: "Cretzy"),
-                text: "Made by https://cretezy.com\n\nMail: example@gmail.com",
+                options: LinkifyOptions(),
+                text: "Made by #https://cretezy.com#Resource1#",
+              ),
+            ),
+            Center(
+              child: Linkify(
+                onOpen: _onOpen,
+                textScaleFactor: 2,
+                options: LinkifyOptions(),
+                text:
+                    "Made by #https://dev.ihealthlabs.com/account/sign-up-success#iHealth# and unMade by #https://dev.google.com/account/sign-up-success#iHealth3# and unMade by https://dev.google.com/account/sign-up-success",
               ),
             ),
             Center(
               child: SelectableLinkify(
                 onOpen: _onOpen,
+                linkifiers: [UserTagLinkifier()],
                 textScaleFactor: 4,
-                text: "Made by https://cretezy.com\n\nMail: example@gmail.com",
+                text: 'Hello @JohnDoe, did you see what @JaneDoe posted?',
               ),
             ),
           ],
@@ -41,10 +52,6 @@ class LinkifyExample extends StatelessWidget {
   }
 
   Future<void> _onOpen(LinkableElement link) async {
-    if (await canLaunch(link.url)) {
-      await launch(link.url);
-    } else {
-      throw 'Could not launch $link';
-    }
+    await launch(link.url);
   }
 }

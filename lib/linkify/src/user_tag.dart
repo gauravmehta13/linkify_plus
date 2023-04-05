@@ -15,7 +15,7 @@ class UserTagLinkifier extends Linkifier {
   List<LinkifyElement> parse(elements, options) {
     final list = <LinkifyElement>[];
 
-    elements.forEach((element) {
+    for (var element in elements) {
       if (element is TextElement) {
         final match = _userTagRegex.firstMatch(element.text);
 
@@ -39,7 +39,7 @@ class UserTagLinkifier extends Linkifier {
       } else {
         list.add(element);
       }
-    });
+    }
 
     return list;
   }
