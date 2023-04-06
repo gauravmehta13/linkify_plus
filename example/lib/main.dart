@@ -34,6 +34,15 @@ class LinkifyExample extends StatelessWidget {
                 textScaleFactor: 2,
                 options: LinkifyOptions(),
                 text:
+                    "Made by #https://dev.ihealthlabs.com/account/sign-up-success#New  Name# and #https://cretezy.com#Resource1#",
+              ),
+            ),
+            Center(
+              child: Linkify(
+                onOpen: _onOpen,
+                textScaleFactor: 2,
+                options: LinkifyOptions(),
+                text:
                     "Made by #https://dev.ihealthlabs.com/account/sign-up-success#iHealth# and unMade by #https://dev.google.com/account/sign-up-success#iHealth3# and unMade by https://dev.google.com/account/sign-up-success",
               ),
             ),

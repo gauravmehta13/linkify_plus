@@ -2,11 +2,10 @@ import '../linkify.dart';
 
 class HashUrlLinkifier extends Linkifier {
   const HashUrlLinkifier();
-  static final _resourceRegex = RegExp(r'#(https?://[^\s#]+)#([^\s#]+)#');
+  static final _resourceRegex = RegExp(r'#(https?://.+?)#(.+?)#');
 
   @override
-  List<LinkifyElement> parse(
-      List<LinkifyElement> elements, LinkifyOptions options) {
+  List<LinkifyElement> parse(List<LinkifyElement> elements, LinkifyOptions options) {
     final list = <LinkifyElement>[];
 
     for (var element in elements) {
